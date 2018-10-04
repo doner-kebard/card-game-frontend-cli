@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 )
 
 const DEV_URL string = "http://localhost:3000"
