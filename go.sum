@@ -1,0 +1,8 @@
+github.com/hashicorp/go-version v1.0.0 h1:21MVWPKDphxa7ineQQTrCU5brh7OuVVAzGOCnnCPtE8=
+github.com/hashicorp/go-version v1.0.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
+github.com/hashicorp/logutils v1.0.0 h1:dLEQVugN8vlakKOUE3ihGLTZJRB4j+M2cdTm/ORI65Y=
+github.com/hashicorp/logutils v1.0.0/go.mod h1:QIAnNjmIWmVIIkWDTG1z5v++HQmx9WQRO+LraFDTW64=
+github.com/pact-foundation/pact-go v0.0.13 h1:oKTaDBoowirLfwfE1wGGHWp+tJAvUzgglkU8dbfOrFg=
+github.com/pact-foundation/pact-go v0.0.13/go.mod h1:uExwJY4kCzNPcHRj+hCR/HBbOOIwwtUjcrb0b5/5kLM=
+github.com/pact-foundation/pact-go v1.0.0-beta.2 h1:2zlJsZAG6+W2noyf+4Zc2UuDExdKM//LPEUHsqzKdeA=
+github.com/pact-foundation/pact-go v1.0.0-beta.2/go.mod h1:uExwJY4kCzNPcHRj+hCR/HBbOOIwwtUjcrb0b5/5kLM=

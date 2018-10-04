@@ -1,24 +1,51 @@
 package main
 
 import (
-	"bytes"
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
-func CreateGame() (*GameState, error) {
-	response, err := http.Post(
-		"http://localhost:3000/games",
-		"application/json",
-		bytes.NewBuffer([]byte("")))
-
-	return responseToGameState(response, err)
+type Lobby struct {
+	GameID      string    `json:"game-id"`
+	PlayerID    string `json:"player-id"`
+	LobbyStatus string `json:"lobby-status"`
 }
 
-func JoinGame(gameID int) (*GameState, error) {
+func responseToLobby(response *http.Response, err error) (*Lobby, error) {
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	var state Lobby
+	err = json.Unmarshal(body, &state)
+	if err != nil {
+		return nil, err
+	}
+
+	return &state, nil
+}
+
+func CreateLobby(baseURL string) (*Lobby, error) {
 	response, err := http.Post(
-		fmt.Sprintf("http://localhost:3000/games/%d", gameID),
+		fmt.Sprintf("%s/lobby", baseURL),
 		"application/json",
-		bytes.NewBuffer([]byte("")))
-	return responseToGameState(response, err)
+		strings.NewReader(""))
+
+	return responseToLobby(response, err)
+}
+
+func JoinLobby(baseURL string, gameID string) (*Lobby, error) {
+	response, err := http.Post(
+		fmt.Sprintf("%s/lobby/%s", baseURL, gameID),
+		"application/json",
+		strings.NewReader(""))
+	return responseToLobby(response, err)
 }

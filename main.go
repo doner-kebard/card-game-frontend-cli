@@ -4,17 +4,19 @@ import (
 	"fmt"
 )
 
+const DEV_URL string = "http://localhost:3000"
+
 func main() {
-	gameState, err := CreateGame()
+	lobby, err := CreateLobby(DEV_URL)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(gameState)
+		fmt.Println(lobby)
 	}
-	gameState2, err := JoinGame(gameState.GameID)
+	lobby2, err := JoinLobby(DEV_URL, lobby.GameID)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(gameState2)
+		fmt.Println(lobby2)
 	}
 }
