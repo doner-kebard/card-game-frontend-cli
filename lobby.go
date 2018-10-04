@@ -9,7 +9,7 @@ import (
 )
 
 type Lobby struct {
-	GameID      string    `json:"game-id"`
+	GameID      string `json:"game-id"`
 	PlayerID    string `json:"player-id"`
 	LobbyStatus string `json:"lobby-status"`
 }
