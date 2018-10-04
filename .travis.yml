@@ -1,7 +1,7 @@
 language: go
 before_script: # Install the standalon pact stuff
     - wget https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.0/pact-1.61.0-linux-x86_64.tar.gz
-    - tar xvf pact-1.61.0-linux-x86_64.tar.gx
+    - tar xvf pact-1.61.0-linux-x86_64.tar.gz
     - export PATH="$PATH:$PWD/pact/bin"
 script:
     - bash .travis.gofmt.sh
