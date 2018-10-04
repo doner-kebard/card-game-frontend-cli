@@ -1,3 +1,4 @@
 card-game-frontend-cli
 *.sw[a-p]
 logs
+pact
